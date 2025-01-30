@@ -1,0 +1,31 @@
+<!-- frontend/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Merger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Document Merger</h1>
+
+    <div class="container">
+        <div id="document-list" class="column"></div>
+        <div id="ordered-list" class="column"></div>
+
+        <div id="preview" class="column">
+            <h1>Document Preview</h1>
+            <button id="preview-button">Preview Document</button>
+            <iframe id="pdf-preview" style="width: 100%; height: 600px;" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <button onclick="mergeDocuments()">Merge Documents</button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
