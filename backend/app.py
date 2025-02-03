@@ -62,8 +62,6 @@ def docx_to_html(doc_path):
     
     return html_content
 
-
-
 @app.route('/api/get-documents', methods=['GET'])
 def get_documents():
     # Get all documents in the repository
@@ -72,6 +70,7 @@ def get_documents():
     # List all categories in the document repo
     for root, dirs, files in os.walk(DOCUMENT_REPOSITORY_PATH):
         category = os.path.basename(root)
+
         if files:
             document_structure[category] = [f for f in files if f.endswith('.docx')]
     
@@ -98,7 +97,7 @@ def merge_documents_route():
     print("document_order", document_order)
     
     # Generate the merged document in memory
-    merged_doc = merge_documents(document_order)
+    merged_doc = merge_documents(document_order, DOCUMENT_REPOSITORY_PATH)
     print("merged_doc", merged_doc)
 
     # Create a BytesIO buffer to hold the merged document in memory
